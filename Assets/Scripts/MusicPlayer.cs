@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public static MusicPlayer Musicplayer;
+    public static MusicPlayer Dontrepeatmusic = null;
 
-    void Start()
+    void Awake()
     {
-        if (Musicplayer == null)
+        if (Dontrepeatmusic != null)
         {
             Destroy(gameObject);
         }
         else
         {
+            Dontrepeatmusic = this;
             DontDestroyOnLoad(gameObject);
         }
     }

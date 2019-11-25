@@ -9,14 +9,12 @@ public class Ball : MonoBehaviour
     private Paddle paddle;
     private new Rigidbody2D rigidbody;
 
-    // Start is called before the first frame update
     void Start()
     {
         paddle = FindObjectOfType<Paddle>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         if (!hasStarted)
@@ -26,7 +24,7 @@ public class Ball : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 hasStarted = true;
-                rigidbody.velocity = new Vector2(3f, 12f);
+                rigidbody.velocity = new Vector2(2f, 10f);
             }
         }
         

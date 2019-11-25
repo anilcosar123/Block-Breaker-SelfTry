@@ -4,27 +4,71 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public int BreakableCount;
+    public static int BreakableCount = 0;
+    public Sprite[] hitSprites;
+    public GameObject smoke;
 
-    // Start is called before the first frame update
+    public GameObject powerUpSmall;
+    public GameObject powerUpBig;
+    public GameObject powerUpBalls;
+
+    private int timesHit = 0;
+    private bool isBreakable;
+    private LevelManager levelmanager;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        levelmanager = FindObjectOfType<LevelManager>();
+        isBreakable = (tag == "breakable");
+        if (isBreakable)
+        {
+            BreakableCount++;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        BreakableCount--;
-
-        if (BreakableCount == 0)
+        int powerUp = Random.Range(1, 10);
+        switch (powerUp)
         {
+            case 1:
+               Instantiate(powerUpBig, gameObject.transform.position, Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(powerUpSmall, gameObject.transform.position, Quaternion.identity);
+                break;
+            case 3:
+                Instantiate(powerUpBalls, gameObject.transform.position, Quaternion.identity);
+                break;
+        }
+
+        if (isBreakable)
+        {
+            HandleHits();
+        }
+    }
+
+    void HandleHits()
+    {
+        timesHit++;
+        int maxHits = hitSprites.Length + 1;
+        if (timesHit >= maxHits)
+        {
+            BreakableCount--;
+            levelmanager.AllBricksDestroyed();
+            GameObject smokePuff = Instantiate(smoke, gameObject.transform.position, Quaternion.identity);
+            smokePuff.GetComponent<ParticleSystem>().startColor = gameObject.GetComponent<SpriteRenderer>().color;
             Destroy(gameObject);
         }
+        else
+        {
+            LoadSprite();
+        }
+    }
+
+    void LoadSprite()
+    {
+        int spriteIndex = timesHit - 1;
+        GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
     }
 }

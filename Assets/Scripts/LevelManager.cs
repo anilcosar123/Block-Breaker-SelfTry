@@ -7,11 +7,21 @@ public class LevelManager : MonoBehaviour
 {
     public void LoadLevel(string name)
     {
+        Brick.BreakableCount = 0;
         SceneManager.LoadScene(name);
     }
 
-    void LoadNextLevel()
+    public void LoadNextLevel()
     {
+        Brick.BreakableCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void AllBricksDestroyed()
+    {
+        if (Brick.BreakableCount <= 0)
+        {
+            LoadNextLevel();
+        }
     }
 }
