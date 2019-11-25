@@ -12,6 +12,7 @@ public class Brick : MonoBehaviour
     public GameObject powerUpBig;
     public GameObject powerUpBalls;
 
+    private int maxHits;
     private int timesHit = 0;
     private bool isBreakable;
     private LevelManager levelmanager;
@@ -28,30 +29,17 @@ public class Brick : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        int powerUp = Random.Range(1, 10);
-        switch (powerUp)
-        {
-            case 1:
-               Instantiate(powerUpBig, gameObject.transform.position, Quaternion.identity);
-                break;
-            case 2:
-                Instantiate(powerUpSmall, gameObject.transform.position, Quaternion.identity);
-                break;
-            case 3:
-                Instantiate(powerUpBalls, gameObject.transform.position, Quaternion.identity);
-                break;
-        }
-
         if (isBreakable)
         {
             HandleHits();
+            HandlePowerUps();
         }
     }
 
     void HandleHits()
     {
         timesHit++;
-        int maxHits = hitSprites.Length + 1;
+        maxHits = hitSprites.Length + 1;
         if (timesHit >= maxHits)
         {
             BreakableCount--;
@@ -70,5 +58,25 @@ public class Brick : MonoBehaviour
     {
         int spriteIndex = timesHit - 1;
         GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+    }
+
+    void HandlePowerUps()
+    {
+        int powerUp = Random.Range(1, 10);
+        if (timesHit >= maxHits)
+        {
+            switch (powerUp)
+            {
+                case 1:
+                    Instantiate(powerUpBig, gameObject.transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(powerUpSmall, gameObject.transform.position, Quaternion.identity);
+                    break;
+                case 3:
+                    Instantiate(powerUpBalls, gameObject.transform.position, Quaternion.identity);
+                    break;
+            }
+        }
     }
 }

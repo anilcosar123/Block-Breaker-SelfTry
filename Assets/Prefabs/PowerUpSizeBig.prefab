@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1699580836637108852}
   - component: {fileID: -4694106081027302647}
   - component: {fileID: -8823722358901706962}
+  - component: {fileID: 1483278887959069940}
   m_Layer: 0
   m_Name: PowerUpSizeBig
   m_TagString: Untagged
@@ -67,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.003908634, y: -0.003908634}
   m_SpriteTilingProperty:
     border: {x: 0.0078125, y: 0, z: 0.0078125, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -78,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2188883, y: 0.33551502}
   m_EdgeRadius: 0
 --- !u!212 &-8823722358901706962
 SpriteRenderer:
@@ -128,3 +129,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1483278887959069940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699580836637108853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245ed83523cba4d449b50347749b494c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

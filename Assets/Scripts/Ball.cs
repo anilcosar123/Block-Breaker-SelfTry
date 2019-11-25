@@ -27,6 +27,21 @@ public class Ball : MonoBehaviour
                 rigidbody.velocity = new Vector2(2f, 10f);
             }
         }
-        
+    }
+
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        //if (trigger.gameObject.name == "PowerUpSpawnBalls(Clone)")
+        //{
+        //    Instantiate()
+        //}
+    }
+
+    void MultiBalls()
+    {
+        if (gameObject.name == "PowerUpSpawnBalls(Clone)")
+        {
+            
+        }
     }
 }

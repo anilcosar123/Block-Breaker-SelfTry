@@ -19,14 +19,12 @@ public class Paddle : MonoBehaviour
     {
         if (trigger.gameObject.name == "PowerUpSizeBig(Clone)")
         {
-            GetComponent<Transform>().localScale = new Vector2(2f,1f);
-            Destroy(trigger);
+            GetComponent<Transform>().localScale = new Vector2(2.5f,1f);
         }
 
         if (trigger.gameObject.name == "PowerUpSizeSmall(Clone)")
         {
-            GetComponent<Transform>().localScale = new Vector2(-2f, -1f);
-            Destroy(trigger);
+            GetComponent<Transform>().localScale = new Vector2(0.5f, 1f);
         }
     }
 }

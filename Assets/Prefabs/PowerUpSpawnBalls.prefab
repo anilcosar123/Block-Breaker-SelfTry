@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4549220961610939279}
   - component: {fileID: -3203955493550488798}
   - component: {fileID: 4105296324136109260}
+  - component: {fileID: 5893161069584161965}
   m_Layer: 0
   m_Name: PowerUpSpawnBalls
   m_TagString: Untagged
@@ -67,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0019078255, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0.0078125, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -78,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2022123, y: 0.32850075}
   m_EdgeRadius: 0
 --- !u!212 &4105296324136109260
 SpriteRenderer:
@@ -128,3 +129,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5893161069584161965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549220961610939280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 245ed83523cba4d449b50347749b494c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

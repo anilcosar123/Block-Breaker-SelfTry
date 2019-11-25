@@ -8,8 +8,11 @@ public class LoseCollider : MonoBehaviour
     private LevelManager _levelmanager;
 
     private void OnTriggerEnter2D(Collider2D trigger)
-    { 
-        _levelmanager = FindObjectOfType<LevelManager>();
-        _levelmanager.LoadLevel("Lose");
+    {
+        if (trigger.gameObject.name == "Cthun Ball")
+        {
+            _levelmanager = FindObjectOfType<LevelManager>();
+            _levelmanager.LoadLevel("Lose");
+        }
     }
 }
