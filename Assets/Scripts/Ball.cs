@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public bool hasStarted;
-
+    
     private Paddle paddle;
     private new Rigidbody2D rigidbody;
 
@@ -26,22 +26,6 @@ public class Ball : MonoBehaviour
                 hasStarted = true;
                 rigidbody.velocity = new Vector2(2f, 10f);
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D trigger)
-    {
-        //if (trigger.gameObject.name == "PowerUpSpawnBalls(Clone)")
-        //{
-        //    Instantiate()
-        //}
-    }
-
-    void MultiBalls()
-    {
-        if (gameObject.name == "PowerUpSpawnBalls(Clone)")
-        {
-            
         }
     }
 }

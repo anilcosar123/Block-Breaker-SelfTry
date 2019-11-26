@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    private Controller controller;
+
     void Update()
     {
         MoveWithMouse();
@@ -25,6 +27,11 @@ public class Paddle : MonoBehaviour
         if (trigger.gameObject.name == "PowerUpSizeSmall(Clone)")
         {
             GetComponent<Transform>().localScale = new Vector2(0.5f, 1f);
+        }
+
+        if (trigger.gameObject.name == "PowerUpSpawnBalls(Clone)")
+        {
+            controller.MultiBalls();
         }
     }
 }
