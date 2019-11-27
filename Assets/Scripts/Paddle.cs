@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
+    public float paddlePos;
+
     private Controller controller;
+
+    void Start()
+    {
+        GameObject.Find("Main Camera").GetComponent<Controller>().CreateBall(false);
+    }
 
     void Update()
     {
@@ -13,7 +20,7 @@ public class Paddle : MonoBehaviour
 
     void MoveWithMouse()
     {
-        float paddlePos = Mathf.Clamp((Input.mousePosition.x / Screen.width * 16), 0.8f, 15.2f);
+        paddlePos = Mathf.Clamp((Input.mousePosition.x / Screen.width * 16), 0.8f, 15.2f);
         transform.position =  new Vector3(paddlePos,1f);
     }
 
@@ -31,7 +38,8 @@ public class Paddle : MonoBehaviour
 
         if (trigger.gameObject.name == "PowerUpSpawnBalls(Clone)")
         {
-            controller.MultiBalls();
+            GameObject.Find("Main Camera").GetComponent<Controller>().CreateBall(true);
+            GameObject.Find("Main Camera").GetComponent<Controller>().CreateBall(true);
         }
     }
 }
