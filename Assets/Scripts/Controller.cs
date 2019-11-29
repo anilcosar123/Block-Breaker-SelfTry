@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public List<Ball> balls;
+    public List<Ball> balls = new List<Ball>();
 
     private Ball ball;
     private Paddle paddle;
@@ -15,19 +14,15 @@ public class Controller : MonoBehaviour
 
     void Awake()
     {
-        balls = new List<Ball>();
         ball = Resources.Load<Ball>("Cthun Ball");
         paddle = GameObject.Find("Paddle").GetComponent<Paddle>();
-        levelmanager = FindObjectOfType<LevelManager>();
+        //levelmanager = FindObjectOfType<LevelManager>();
         DontDestroyOnLoad(gameObject);
     }
 
     void LateUpdate()
     {
-        //if (balls.Count == 0)
-        //{
-        //    levelmanager.LoadLevel("Lose");
-        //}
+
     }
 
     public void CreateBall(bool multiBall)
@@ -41,8 +36,9 @@ public class Controller : MonoBehaviour
         b.Init(multiBall);
     }
 
-    public void DestroyBall(Ball ball)
+    public void DestroyBall()
     {
         balls.Remove(ball);
+        //Destroy(GameObject.Find());
     }
 }
