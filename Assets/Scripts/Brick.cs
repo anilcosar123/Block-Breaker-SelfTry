@@ -6,8 +6,8 @@ public class Brick : MonoBehaviour
 {
     public static int BreakableCount = 0;
     public Sprite[] hitSprites;
-    public GameObject smoke;
 
+    public GameObject smoke;
     public GameObject powerUpSmall;
     public GameObject powerUpBig;
     public GameObject powerUpBalls;

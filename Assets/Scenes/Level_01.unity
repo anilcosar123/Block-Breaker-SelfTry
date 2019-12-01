@@ -570,25 +570,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 708990152}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &864735525 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2166756910690334746, guid: 71605c107e50cef4bb64364a9489397a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2166756911726661206}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &864735526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864735525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017b55775ed11444d8183bd9ad16058e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balls: []
 --- !u!114 &915794361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6703815767262987126, guid: 30345da3b3414a142baa5bba28d583b7,

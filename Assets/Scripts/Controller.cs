@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public List<Ball> balls = new List<Ball>();
+    public List<Ball> balls;
 
     private Ball ball;
     private Paddle paddle;
-    private Brick brick;
     private LoseCollider losecollider;
-    private LevelManager levelmanager;
+    //private LevelManager levelmanager;
 
     void Awake()
     {
         ball = Resources.Load<Ball>("Cthun Ball");
         paddle = GameObject.Find("Paddle").GetComponent<Paddle>();
+        balls = new List<Ball>();
         //levelmanager = FindObjectOfType<LevelManager>();
         DontDestroyOnLoad(gameObject);
     }
@@ -36,9 +37,11 @@ public class Controller : MonoBehaviour
         b.Init(multiBall);
     }
 
-    public void DestroyBall()
-    {
-        balls.Remove(ball);
-        //Destroy(GameObject.Find());
-    }
+    //public void DestroyBall()
+    //{
+    //    Destroy(GameObject.Find("Cthun Ball(Clone)"));
+    //    balls.Remove(ball);
+
+
+    //}
 }

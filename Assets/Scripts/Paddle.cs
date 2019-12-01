@@ -38,8 +38,8 @@ public class Paddle : MonoBehaviour
 
         if (trigger.gameObject.name == "PowerUpSpawnBalls(Clone)")
         {
-            GetComponent<Controller>().CreateBall(true);
-            GetComponent<Controller>().CreateBall(true);
+            GameObject.Find("Main Camera").GetComponent<Controller>().CreateBall(true);
+            GameObject.Find("Main Camera").GetComponent<Controller>().CreateBall(true);
         }
     }
 }

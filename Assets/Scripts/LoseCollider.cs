@@ -8,11 +8,10 @@ public class LoseCollider : MonoBehaviour
     private LevelManager levelmanager;
     private Controller controller;
     
-    private Ball ball;
 
     void Start()
     {
-        controller = GetComponent<Controller>();
+        controller = FindObjectOfType<Controller>();
         levelmanager = FindObjectOfType<LevelManager>();
         
     }
@@ -28,8 +27,8 @@ public class LoseCollider : MonoBehaviour
 
         if (trigger.gameObject.name == "Cthun Ball(Clone)")
         {
-            controller.DestroyBall();
-            
+            //controller.DestroyBall();
+
             if (controller.balls.Count == 0)
             {
                 levelmanager.LoadLevel("Lose");

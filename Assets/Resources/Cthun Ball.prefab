@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6753494271398778542}
   - component: {fileID: 1142825378774300796}
   - component: {fileID: 1877998726137791758}
-  - component: {fileID: 7025558815731587383}
   m_Layer: 0
   m_Name: Cthun Ball
   m_TagString: Untagged
@@ -230,16 +229,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasStarted: 0
---- !u!114 &7025558815731587383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6753494271398778546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017b55775ed11444d8183bd9ad16058e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 0}
+  multiBall: 0
+  hasInitialized: 0

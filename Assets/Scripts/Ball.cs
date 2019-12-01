@@ -5,16 +5,19 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public bool hasStarted;
+    public bool multiBall;
+    public bool hasInitialized;
 
-    private bool multiBall;
-    private bool hasInitialized;
+    private Controller controller;
     private Paddle paddle;
     private new Rigidbody2D rigidbody;
+    private Ball ball;
 
     void Start()
     {
         paddle = FindObjectOfType<Paddle>();
         rigidbody = GetComponent<Rigidbody2D>();
+        controller = FindObjectOfType<Controller>();
     }
 
     public void Init(bool multiBall)
@@ -39,6 +42,15 @@ public class Ball : MonoBehaviour
                 rigidbody.velocity = new Vector2(2f, 10f);
             }
         }
+    }
 
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.name == "LoseCollider")
+        {
+            controller.balls.Remove(ball);
+            //controller.balls.Count;
+            Destroy(gameObject);
+        }
     }
 }
