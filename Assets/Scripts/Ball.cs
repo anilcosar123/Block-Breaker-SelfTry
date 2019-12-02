@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     private Controller controller;
     private Paddle paddle;
     private new Rigidbody2D rigidbody;
-    private Ball ball;
+   
 
     void Start()
     {
@@ -48,8 +48,7 @@ public class Ball : MonoBehaviour
     {
         if (trigger.gameObject.name == "LoseCollider")
         {
-            controller.balls.Remove(ball);
-            //controller.balls.Count;
+            controller.balls.Remove(this);
             Destroy(gameObject);
         }
     }

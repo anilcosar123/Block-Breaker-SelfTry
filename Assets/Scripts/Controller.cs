@@ -10,14 +10,12 @@ public class Controller : MonoBehaviour
     private Ball ball;
     private Paddle paddle;
     private LoseCollider losecollider;
-    //private LevelManager levelmanager;
-
+    
     void Awake()
     {
         ball = Resources.Load<Ball>("Cthun Ball");
         paddle = GameObject.Find("Paddle").GetComponent<Paddle>();
         balls = new List<Ball>();
-        //levelmanager = FindObjectOfType<LevelManager>();
         DontDestroyOnLoad(gameObject);
     }
 
@@ -28,6 +26,7 @@ public class Controller : MonoBehaviour
 
     public void CreateBall(bool multiBall)
     {
+        
         var b = Instantiate(ball, new Vector3(paddle.paddlePos, 2f), Quaternion.identity);
         balls.Add(b);
         if (multiBall)
@@ -36,12 +35,4 @@ public class Controller : MonoBehaviour
         }
         b.Init(multiBall);
     }
-
-    //public void DestroyBall()
-    //{
-    //    Destroy(GameObject.Find("Cthun Ball(Clone)"));
-    //    balls.Remove(ball);
-
-
-    //}
 }

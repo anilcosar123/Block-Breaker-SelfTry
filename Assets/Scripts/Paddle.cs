@@ -29,6 +29,7 @@ public class Paddle : MonoBehaviour
         if (trigger.gameObject.name == "PowerUpSizeBig(Clone)")
         {
             GetComponent<Transform>().localScale = new Vector2(2.5f,1f);
+            //paddlePos = Mathf.Clamp((Input.mousePosition.x / Screen.width * 16), 2.3f, 13.7f);
         }
 
         if (trigger.gameObject.name == "PowerUpSizeSmall(Clone)")
