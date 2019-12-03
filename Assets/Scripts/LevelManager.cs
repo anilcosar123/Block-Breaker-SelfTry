@@ -14,15 +14,15 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(string name)
     {
         Brick.BreakableCount = 0;
-        controller.balls.Clear();
         SceneManager.LoadScene(name);
+        controller.balls.Clear();
     }
 
     public void LoadNextLevel()
     {
         Brick.BreakableCount = 0;
-        controller.balls.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        controller.balls.Clear();
     }
 
     public void AllBricksDestroyed()

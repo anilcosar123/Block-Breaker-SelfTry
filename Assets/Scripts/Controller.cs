@@ -26,12 +26,11 @@ public class Controller : MonoBehaviour
 
     public void CreateBall(bool multiBall)
     {
-        
         var b = Instantiate(ball, new Vector3(paddle.paddlePos, 2f), Quaternion.identity);
         balls.Add(b);
         if (multiBall)
         {
-            b.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2, 2), 10f);
+            b.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-2f,2f),10f);
         }
         b.Init(multiBall);
     }

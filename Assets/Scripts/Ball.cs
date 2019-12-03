@@ -11,8 +11,7 @@ public class Ball : MonoBehaviour
     private Controller controller;
     private Paddle paddle;
     private new Rigidbody2D rigidbody;
-   
-
+    
     void Start()
     {
         paddle = FindObjectOfType<Paddle>();
@@ -25,6 +24,7 @@ public class Ball : MonoBehaviour
         hasInitialized = true;
         this.multiBall = multiBall;
     }
+
     void LateUpdate()
     {
         if (!hasInitialized)
