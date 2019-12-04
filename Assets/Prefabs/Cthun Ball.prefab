@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5044299691025745864}
   - component: {fileID: 5044299691025745879}
   - component: {fileID: 123344803398915191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cthun Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,3 +132,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasStarted: 0
+  multiBall: 0
+  hasInitialized: 0
